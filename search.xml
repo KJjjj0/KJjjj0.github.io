@@ -4,6 +4,50 @@
   
     
     <entry>
+      <title>操作系统————资源管理器</title>
+      <link href="/2023/01/28/cao-zuo-xi-tong/zi-yuan-guan-li-qi/"/>
+      <url>/2023/01/28/cao-zuo-xi-tong/zi-yuan-guan-li-qi/</url>
+      
+        <content type="html"><![CDATA[<hr><h1 id="进程及其实现"><a href="#进程及其实现" class="headerlink" title="进程及其实现"></a>进程及其实现</h1><h2 id="进程描述和组成"><a href="#进程描述和组成" class="headerlink" title="进程描述和组成"></a>进程描述和组成</h2><h3 id="进程映像"><a href="#进程映像" class="headerlink" title="进程映像"></a>进程映像</h3><ul><li>要素<ul><li>进程控制块：用来存储进程的标志信息、现场信息和控制信息。</li><li>进程程序块：是被进程执行的程序，规定进程一次运行所完成的功能。</li><li>进程核心栈：用来保存中断/异常现场，保存函数调用的参数、局部变量和返回地址。</li><li>进程数据块：进程的私有地址空间，存放各种私有数据，用户栈也在数据块中开辟，用于在函数调用时存放栈帧、局部变量和返回地址等参数。</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 操作系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> -C -算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>操作系统————系统概述</title>
+      <link href="/2023/01/28/cao-zuo-xi-tong/xi-tong-gai-shu/"/>
+      <url>/2023/01/28/cao-zuo-xi-tong/xi-tong-gai-shu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="操作系统功能和特性"><a href="#操作系统功能和特性" class="headerlink" title="操作系统功能和特性"></a>操作系统功能和特性</h1><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul><li>处理器管理</li><li>存储管理</li><li>设备管理</li><li>文件管理</li><li>联网与通信管理</li></ul><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ol><li>并发性</li><li>共享性</li><li>虚拟性   [^1]老师加的</li><li>异步性</li></ol><h1 id="多道程序设计"><a href="#多道程序设计" class="headerlink" title="多道程序设计"></a>多道程序设计</h1><p> ==CPU利用率怎么求？==<br>$$CPU利用率=1-p^{n}$$<br>%% n为多道程序的道数或度数%%<br>![[6da64dcd223180a33afb926ee09fb53.jpg]]</p><h1 id="发展与分类"><a href="#发展与分类" class="headerlink" title="发展与分类"></a>发展与分类</h1><ol><li>~~批处理操作系统</li><li>~~分时操作系统</li><li><strong>实时操作系统</strong>   %%主要特点：提供及时相应和高可靠性%%<ol><li>过程控制系统</li><li>信息查询系统</li><li>事务处理系统</li></ol></li></ol><h1 id="程序接口和系统调用"><a href="#程序接口和系统调用" class="headerlink" title="程序接口和系统调用"></a>程序接口和系统调用</h1><h2 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>  为了创建良好的应用程序运行环境。</p><ul><li>内核可以基于权限和规则对资源访问进行裁决，==保证系统安全</li><li>系统调用==对资源进行抽象，提供一致性接口，避免用户在使用资源时发生错误，且使编程效率大大提高==</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 操作系统 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2023/01/27/hello-world/"/>
       <url>/2023/01/27/hello-world/</url>
@@ -35,8 +79,6 @@
             
             <tag> Vue </tag>
             
-            <tag> Markdown </tag>
-            
         </tags>
       
     </entry>
@@ -44,32 +86,7 @@
     
     
     <entry>
-      <title>Web入门——文本基础</title>
-      <link href="/2022/12/07/web/wen-ben-ji-chu/"/>
-      <url>/2022/12/07/web/wen-ben-ji-chu/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Html"><a href="#Html" class="headerlink" title="Html"></a>Html</h1><h2 id="文本基础"><a href="#文本基础" class="headerlink" title="文本基础"></a>文本基础</h2><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4>   <ol>        <li>沿着这条路走到头</li>        <li>jiuzoubudaole</li>    </ol><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><ul>    <li>沿着这条路走到头</li>    <li>jiuzoubudaole</li></ul><h3 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h3><pre><code>&lt;em&gt;斜体&lt;strong&gt;粗体</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> Web入门 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Html </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>操作系统——算法入门</title>
+      <title>操作系统————处理器调度</title>
       <link href="/2022/12/07/cao-zuo-xi-tong/hrrf/"/>
       <url>/2022/12/07/cao-zuo-xi-tong/hrrf/</url>
       
@@ -78,7 +95,7 @@
       
       <categories>
           
-          <category> 操作系统——处理器调度 </category>
+          <category> 操作系统 </category>
           
       </categories>
       
@@ -150,6 +167,31 @@
     
     
     <entry>
+      <title>Web入门——文本基础</title>
+      <link href="/2022/12/07/web/html/wen-ben-ji-chu/"/>
+      <url>/2022/12/07/web/html/wen-ben-ji-chu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Html"><a href="#Html" class="headerlink" title="Html"></a>Html</h1><h2 id="文本基础"><a href="#文本基础" class="headerlink" title="文本基础"></a>文本基础</h2><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4>   <ol>        <li>沿着这条路走到头</li>        <li>jiuzoubudaole</li>    </ol><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><ul>    <li>沿着这条路走到头</li>    <li>jiuzoubudaole</li></ul><h3 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h3><pre><code>&lt;em&gt;斜体&lt;strong&gt;粗体</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web入门 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据处理——Numpy基础</title>
       <link href="/2022/12/07/shu-ju-chu-li/numpy/numpy-ji-chu/"/>
       <url>/2022/12/07/shu-ju-chu-li/numpy/numpy-ji-chu/</url>
@@ -165,8 +207,6 @@
       
       
         <tags>
-            
-            <tag> Markdown </tag>
             
             <tag> NUPMy </tag>
             
@@ -194,8 +234,6 @@
       
       
         <tags>
-            
-            <tag> Markdown </tag>
             
             <tag> NUPMy </tag>
             
