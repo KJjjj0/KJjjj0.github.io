@@ -4,9 +4,41 @@
   
     
     <entry>
+      <title>操作系统————同步、通信与死锁</title>
+      <link href="/2023/02/06/cao-zuo-xi-tong/san-tong-bu-tong-xin-yu-si-suo/"/>
+      <url>/2023/02/06/cao-zuo-xi-tong/san-tong-bu-tong-xin-yu-si-suo/</url>
+      
+        <content type="html"><![CDATA[<hr><h1 id="并发进程"><a href="#并发进程" class="headerlink" title="并发进程"></a>并发进程</h1><p>让程序并发执行能发挥CPU和设备的并行工作能力，从而提高计算机系统效率。]]![[IMG_20230206_141705(1).jpg]]</p><h2 id="并发进程的特性"><a href="#并发进程的特性" class="headerlink" title="并发进程的特性"></a>并发进程的特性</h2><ol><li>并发性</li><li>共享性</li><li>交互性：制约关系</li></ol><h3 id="Bernstein条件"><a href="#Bernstein条件" class="headerlink" title="Bernstein条件"></a>Bernstein条件</h3><p>1966年由Bernstein提出，假设：<br>$$R(P_i)={a_1,a_2,···,a_n}，  程序P_i在执行期间所引用的变量集$$<br>$$W(P_i)={b_1,b_2,···,b_n}，程序W_i在执行期间所改变的变量集$$<br>若两个进程的程序$P_i$和$W_i$能满足Bernstein条件，即引用变量集与改变变量集的交集为空集:<br>$$R(P_1)\bigcap W(P_2)\bigcup R(P_2)\bigcap W(P_1)\bigcup W(p_1)\bigcap W(P_2) =\varnothing$$<br><strong>则并发进程的执行与时间无关</strong>。<br>$R(P_1)\bigcap W(P_2)\bigcup R(P_2)\bigcap W(P_1)=\varnothing$<em>表明一个程序在两次读操作之间存储单元的数据不会改变</em>；$W(p_1)\bigcap W(P_2) =\varnothing$ <em>表明程序的写操作结果不会丢失</em>。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 操作系统 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2023/02/03/image/6da64dcd223180a33afb926ee09fb53.jpg/"/>
+      <url>/2023/02/03/image/6da64dcd223180a33afb926ee09fb53.jpg/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>操作系统————资源管理器</title>
-      <link href="/2023/01/31/cao-zuo-xi-tong/zi-yuan-guan-li-qi/"/>
-      <url>/2023/01/31/cao-zuo-xi-tong/zi-yuan-guan-li-qi/</url>
+      <link href="/2023/01/31/cao-zuo-xi-tong/er-zi-yuan-guan-li-qi/"/>
+      <url>/2023/01/31/cao-zuo-xi-tong/er-zi-yuan-guan-li-qi/</url>
       
         <content type="html"><![CDATA[<hr><h1 id="处理器状态"><a href="#处理器状态" class="headerlink" title="处理器状态"></a>处理器状态</h1><h2 id="程序状态字（PSW）"><a href="#程序状态字（PSW）" class="headerlink" title="程序状态字（PSW）"></a>程序状态字（PSW）</h2><h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><p>将程序运行时的一组动态信息汇集在一起，称为程序状态字。</p><h1 id="中断技术"><a href="#中断技术" class="headerlink" title="中断技术"></a>中断技术</h1><h1 id="进程及其实现"><a href="#进程及其实现" class="headerlink" title="进程及其实现"></a>进程及其实现</h1><h2 id="进程描述和组成"><a href="#进程描述和组成" class="headerlink" title="进程描述和组成"></a>进程描述和组成</h2><h3 id="进程映像"><a href="#进程映像" class="headerlink" title="进程映像"></a>进程映像</h3><ul><li>要素<ul><li>进程控制块：用来存储进程的标志信息、现场信息和控制信息。</li><li>进程程序块：是被进程执行的程序，规定进程一次运行所完成的功能。</li><li>进程核心栈：用来保存中断/异常现场，保存函数调用的参数、局部变量和返回地址。</li><li>进程数据块：进程的私有地址空间，存放各种私有数据，用户栈也在数据块中开辟，用于在函数调用时存放栈帧、局部变量和返回地址等参数。</li></ul></li></ul><hr><h1 id="处理器调度"><a href="#处理器调度" class="headerlink" title="处理器调度"></a>处理器调度</h1><p>$$平均周转时间=\frac{周转时间之和}{作业数}$$</p><p>$$带权周转时间=\frac{周转时间}{服务时间}$$</p><h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><ul><li>先来先到算法（FCFS）</li><li>最短作业优先算法（SJF）</li><li>最短剩余时间算法（SRTF）</li><li>最高响应比优先算法（HRRF）</li><li>优先级调度算法</li><li>轮转调度算法（时间轮转）</li><li><del>多级反馈队列调度算法</del></li></ul>]]></content>
       
@@ -30,10 +62,10 @@
     
     <entry>
       <title>操作系统————系统概述</title>
-      <link href="/2023/01/28/cao-zuo-xi-tong/xi-tong-gai-shu/"/>
-      <url>/2023/01/28/cao-zuo-xi-tong/xi-tong-gai-shu/</url>
+      <link href="/2023/01/28/cao-zuo-xi-tong/yi-xi-tong-gai-shu/"/>
+      <url>/2023/01/28/cao-zuo-xi-tong/yi-xi-tong-gai-shu/</url>
       
-        <content type="html"><![CDATA[<hr><h1 id="操作系统功能和特性"><a href="#操作系统功能和特性" class="headerlink" title="操作系统功能和特性"></a>操作系统功能和特性</h1><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul><li>处理器管理</li><li>存储管理</li><li>设备管理</li><li>文件管理</li><li>联网与通信管理</li></ul><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ol><li><em>并发性</em></li><li><strong>共享性</strong></li><li>虚拟性   [^1]老师加的</li><li>异步性</li></ol><h1 id="多道程序设计"><a href="#多道程序设计" class="headerlink" title="多道程序设计"></a>多道程序设计</h1><p><strong>CPU利用率怎么求？</strong><br>$$CPU利用率=1-p^{n}$$<br>%% n为多道程序的道数或度数%%<br>![[6da64dcd223180a33afb926ee09fb53.jpg]]</p><h1 id="发展与分类"><a href="#发展与分类" class="headerlink" title="发展与分类"></a>发展与分类</h1><ol><li><del>批处理操作系统</del></li><li><del>分时操作系统</del></li><li><strong>实时操作系统</strong>   %%主要特点：提供及时相应和高可靠性%%<ol><li>过程控制系统</li><li>信息查询系统</li><li>事务处理系统</li></ol></li></ol><h1 id="程序接口和系统调用"><a href="#程序接口和系统调用" class="headerlink" title="程序接口和系统调用"></a>程序接口和系统调用</h1><h2 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>  为了创建良好的应用程序运行环境。</p><ul><li>内核可以基于权限和规则对资源访问进行裁决，==保证系统安全==</li><li>系统调用==对资源进行抽象，提供一致性接口，避免用户在使用资源时发生错误，且使编程效率大大提高==</li></ul>]]></content>
+        <content type="html"><![CDATA[<hr><h1 id="操作系统功能和特性"><a href="#操作系统功能和特性" class="headerlink" title="操作系统功能和特性"></a>操作系统功能和特性</h1><h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul><li>处理器管理</li><li>存储管理</li><li>设备管理</li><li>文件管理</li><li>联网与通信管理</li></ul><h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ol><li><em>并发性</em></li><li><strong>共享性</strong></li><li>虚拟性   [^1]老师加的</li><li>异步性</li></ol><h1 id="多道程序设计"><a href="#多道程序设计" class="headerlink" title="多道程序设计"></a>多道程序设计</h1><p><strong>CPU利用率怎么求？</strong><br>$$CPU利用率=1-p^{n}$$<br>%% n为多道程序的道数或度数%%<br><img src="/D/Blog/source/_posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image/11.jpg" alt="图片" title="tupian"></p><h1 id="发展与分类"><a href="#发展与分类" class="headerlink" title="发展与分类"></a>发展与分类</h1><ol><li><del>批处理操作系统</del></li><li><del>分时操作系统</del></li><li><strong>实时操作系统</strong>   %%主要特点：提供及时相应和高可靠性%%<ol><li>过程控制系统</li><li>信息查询系统</li><li>事务处理系统</li></ol></li></ol><h1 id="程序接口和系统调用"><a href="#程序接口和系统调用" class="headerlink" title="程序接口和系统调用"></a>程序接口和系统调用</h1><h2 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>  为了创建良好的应用程序运行环境。</p><ul><li>内核可以基于权限和规则对资源访问进行裁决，==保证系统安全==</li><li>系统调用==对资源进行抽象，提供一致性接口，避免用户在使用资源时发生错误，且使编程效率大大提高==</li></ul>]]></content>
       
       
       <categories>
@@ -42,31 +74,6 @@
           
       </categories>
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>vue开发基础</title>
-      <link href="/2022/12/07/vue/vue-kai-fa-ji-chu/"/>
-      <url>/2022/12/07/vue/vue-kai-fa-ji-chu/</url>
-      
-        <content type="html"><![CDATA[<h1 id="脚手架安装"><a href="#脚手架安装" class="headerlink" title="脚手架安装"></a>脚手架安装</h1><h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><pre><code> 1、vue create 221109_cli_demo 2、$ cd 221109_cli_demo 3、$ npm run serve</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> Vue </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Vue </tag>
-            
-        </tags>
       
     </entry>
     
@@ -92,6 +99,31 @@
             <tag> C </tag>
             
             <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue开发基础</title>
+      <link href="/2022/12/07/vue/vue-kai-fa-ji-chu/"/>
+      <url>/2022/12/07/vue/vue-kai-fa-ji-chu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="脚手架安装"><a href="#脚手架安装" class="headerlink" title="脚手架安装"></a>脚手架安装</h1><h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><pre><code> 1、vue create 221109_cli_demo 2、$ cd 221109_cli_demo 3、$ npm run serve</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
             
         </tags>
       
