@@ -364,12 +364,22 @@
             <div id="articleContent">
                 <hr>
 <h1 id="并发进程"><a href="#并发进程" class="headerlink" title="并发进程"></a>并发进程</h1><p>让程序并发执行能发挥CPU和设备的并行工作能力，从而提高计算机系统效率。]]![[IMG_20230206_141705(1).jpg]]</p>
-<h2 id="并发进程的特性"><a href="#并发进程的特性" class="headerlink" title="并发进程的特性"></a>并发进程的特性</h2><ol>
+<h2 id="并发进程的特性"><a href="#并发进程的特性" class="headerlink" title="并发进程的特性"></a>并发进程的特性</h2><p><strong>并发进程可能是无关的，也可能是交互的。</strong></p>
+<ol>
 <li>并发性</li>
 <li>共享性</li>
 <li>交互性：制约关系</li>
 </ol>
-<h3 id="Bernstein条件"><a href="#Bernstein条件" class="headerlink" title="Bernstein条件"></a>Bernstein条件</h3><p>1966年由Bernstein提出，假设：<br>$$R(P_i)={a_1,a_2,···,a_n}，  程序P_i在执行期间所引用的变量集$$<br>$$W(P_i)={b_1,b_2,···,b_n}，程序W_i在执行期间所改变的变量集$$<br>若两个进程的程序$P_i$和$W_i$能满足Bernstein条件，即引用变量集与改变变量集的交集为空集:<br>$$R(P_1)\bigcap W(P_2)\bigcup R(P_2)\bigcap W(P_1)\bigcup W(p_1)\bigcap W(P_2) =\varnothing$$<br><strong>则并发进程的执行与时间无关</strong>。<br>$R(P_1)\bigcap W(P_2)\bigcup R(P_2)\bigcap W(P_1)=\varnothing$<em>表明一个程序在两次读操作之间存储单元的数据不会改变</em>；$W(p_1)\bigcap W(P_2) =\varnothing$ <em>表明程序的写操作结果不会丢失</em>。</p>
+<h3 id="Bernstein条件"><a href="#Bernstein条件" class="headerlink" title="Bernstein条件"></a>Bernstein条件</h3><p>并发进程的<mark>无关性</mark>是进程的执行与时间无关的一个充分条件，是1966年由Bernstein提出，假设：<br>$$R(P_i)={a_1,a_2,···,a_n}，  程序P_i在执行期间所引用的变量集$$<br>$$W(P_i)={b_1,b_2,···,b_n}，程序W_i在执行期间所改变的变量集$$<br>若两个进程的程序$P_i$和$W_i$能满足Bernstein条件，<strong>即引用变量集与改变变量集的交集为空集:</strong><br>$$R(P_1)\bigcap W(P_2)\bigcup R(P_2)\bigcap W(P_1)\bigcup W(p_1)\bigcap W(P_2) =\varnothing$$<br><strong>则并发进程的执行与时间无关</strong>。<br>$R(P_1)\bigcap W(P_2)\bigcup R(P_2)\bigcap W(P_1)=\varnothing$<em>表明一个程序在两次读操作之间存储单元的数据不会改变</em>；$W(p_1)\bigcap W(P_2) =\varnothing$ <em>表明程序的写操作结果不会丢失</em>。</p>
+<h2 id="临界区管理"><a href="#临界区管理" class="headerlink" title="临界区管理"></a>临界区管理</h2><h3 id="互斥与临界区"><a href="#互斥与临界区" class="headerlink" title="互斥与临界区"></a>互斥与临界区</h3><p>并发进程中与共享变量有关的程序段被称为<mark>临界区</mark>。</p>
+<h3 id="实现临界区管理的软件算法"><a href="#实现临界区管理的软件算法" class="headerlink" title="实现临界区管理的软件算法"></a>实现临界区管理的<mark>软件算法</mark></h3><h3 id="实现临界区管理的硬件设施"><a href="#实现临界区管理的硬件设施" class="headerlink" title="实现临界区管理的硬件设施"></a>实现临界区管理的<mark>硬件设施</mark></h3><ul>
+<li>关中断<br>实现互斥最简单的方法。</li>
+</ul>
+<h2 id="信号量与PV操作"><a href="#信号量与PV操作" class="headerlink" title="信号量与PV操作"></a>信号量与PV操作</h2><h3 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h3><h4 id="一般信号量"><a href="#一般信号量" class="headerlink" title="一般信号量"></a>一般信号量</h4><p>设s为一个记录型数据结构，其中<strong>value为整型变量</strong>，系统初始化时为其赋初始值；<br>list是等待使用此类资源的进程队列的<strong>头指针</strong>，初始状态为空队列，PV操作原语描述如下：</p>
+<ul>
+<li>P(s)：将信号量value值减1，<strong>若结果小于0</strong>，则执行P操作的进程被阻塞，排入与s信号量有关的list所指队列中；<strong>若结果大于等于0</strong>，则执行P操作的进程继续执行。</li>
+<li>V(s)：将信号量value值加1，<strong>若结果小于等于0</strong>，则执行V操作的进程从信号量s有关的list队列中释放一个进程，使其转换为就绪态，自己则继续执行；<strong>若结果大于0</strong>，则执行V操作的进程则继续进行.</li>
+</ul>
 
                 
             </div>
