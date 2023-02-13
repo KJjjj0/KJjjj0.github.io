@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="操作系统————同步、通信与死锁, BLOG">
+    <meta name="keywords" content="计算机网络————概述, BLOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>操作系统————同步、通信与死锁 | BLOG</title>
+    <title>计算机网络————概述 | BLOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -290,12 +290,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">操作系统————同步、通信与死锁</h1>
+                    <h1 class="description center-align post-title">计算机网络————概述</h1>
                 </div>
             </div>
         </div>
@@ -315,17 +315,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/C/">
-                                <span class="chip bg-color">C</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -333,8 +325,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-category">
-                                操作系统
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                计算机网络
                             </a>
                         
                     </div>
@@ -346,7 +338,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-06
+                    2023-02-13
                 </div>
                 
 
@@ -371,195 +363,8 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <hr>
-<h1 id="并发进程"><a href="#并发进程" class="headerlink" title="并发进程"></a>并发进程</h1><p>让程序并发执行能发挥CPU和设备的并行工作能力，从而提高计算机系统效率。<br>![[IMG_20230206_141705(1).jpg]]</p>
-<h2 id="并发进程的特性"><a href="#并发进程的特性" class="headerlink" title="并发进程的特性"></a>并发进程的特性</h2><p><strong>并发进程可能是无关的，也可能是交互的。</strong></p>
-<ol>
-<li>并发性</li>
-<li>共享性</li>
-<li>交互性：制约关系</li>
-</ol>
-<h3 id="Bernstein条件"><a href="#Bernstein条件" class="headerlink" title="Bernstein条件"></a>Bernstein条件</h3><p>并发进程的<mark>无关性</mark>是进程的执行与时间无关的一个充分条件，是1966年由Bernstein提出，假设：<br>$$R(P_i)={a_1,a_2,···,a_n}，  程序P_i在执行期间所引用的变量集$$<br>$$W(P_i)={b_1,b_2,···,b_n}，程序W_i在执行期间所改变的变量集$$<br>若两个进程的程序$P_i$和$W_i$能满足Bernstein条件，<strong>即引用变量集与改变变量集的交集为空集:</strong><br>$$R(P_1)\bigcap W(P_2)\bigcup R(P_2)\bigcap W(P_1)\bigcup W(p_1)\bigcap W(P_2) =\varnothing$$<br><strong>则并发进程的执行与时间无关</strong>。<br>$R(P_1)\bigcap W(P_2)\bigcup R(P_2)\bigcap W(P_1)=\varnothing$<em>表明一个程序在两次读操作之间存储单元的数据不会改变</em>；$W(p_1)\bigcap W(P_2) =\varnothing$ <em>表明程序的写操作结果不会丢失</em>。</p>
-<h2 id="临界区管理"><a href="#临界区管理" class="headerlink" title="临界区管理"></a>临界区管理</h2><h3 id="互斥与临界区"><a href="#互斥与临界区" class="headerlink" title="互斥与临界区"></a>互斥与临界区</h3><p>并发进程中与共享变量有关的程序段被称为<mark>临界区</mark>。</p>
-<h3 id="实现临界区管理的软件算法"><a href="#实现临界区管理的软件算法" class="headerlink" title="实现临界区管理的软件算法"></a>实现临界区管理的<mark>软件算法</mark></h3><h3 id="实现临界区管理的硬件设施"><a href="#实现临界区管理的硬件设施" class="headerlink" title="实现临界区管理的硬件设施"></a>实现临界区管理的<mark>硬件设施</mark></h3><ul>
-<li>关中断<br>实现互斥最简单的方法。</li>
-</ul>
-<h2 id="信号量与PV操作"><a href="#信号量与PV操作" class="headerlink" title="信号量与PV操作"></a>信号量与PV操作</h2><h3 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h3><h4 id="一般信号量"><a href="#一般信号量" class="headerlink" title="一般信号量"></a>一般信号量</h4><p>设s为一个记录型数据结构，其中<strong>value为整型变量</strong>，系统初始化时为其赋初始值；<br>list是等待使用此类资源的进程队列的<strong>头指针</strong>，初始状态为空队列，PV操作原语描述如下：</p>
-<ul>
-<li>P(s)：将信号量value值减1，<strong>若结果小于0</strong>，则执行P操作的进程被阻塞，排入与s信号量有关的list所指队列中；<strong>若结果大于等于0</strong>，则执行P操作的进程继续执行。</li>
-<li>V(s)：将信号量value值加1，<strong>若结果小于等于0</strong>，则执行V操作的进程从信号量s有关的list队列中释放一个进程，使其转换为就绪态，自己则继续执行；<strong>若结果大于0</strong>，则执行V操作的进程则继续进行.</li>
-</ul>
-<hr>
-<p>推论1：若信号量s.value为<strong>正值</strong>，等于在<strong>封锁进程之前</strong>对信号量s<strong>可执行的P操作数</strong>，即s代表的实际<strong>可用的物理资源数</strong>。<br>推论2：若信号量s.value为<strong>负值</strong>，他的绝对值等于排列在s信号量队列之中<strong>等待进程个数</strong>。<br>推论3：P操作意味<strong>请求一个资源</strong>，V操作意味<strong>释放</strong>一个资源；在一定条件下，P操作代表<strong>挂起</strong>进程操作，V代表<strong>唤醒</strong>被挂起的操作。</p>
-<h4 id="进程同步"><a href="#进程同步" class="headerlink" title="进程同步"></a>进程同步</h4><pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;pthread.h&gt;</span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;semaphore.h&gt;</span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;unistd.h&gt;</span></span>
-
-<span class="token class-name">sem_t</span> s12<span class="token punctuation">,</span>s67<span class="token punctuation">;</span><span class="token comment">//set sems</span>
-<span class="token keyword">void</span> <span class="token operator">*</span><span class="token function">myThread1</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token comment">//sem thread 1</span>
-<span class="token punctuation">{</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"run s1\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
-    <span class="token function">sem_post</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>s12<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//V operation</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"run s3\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment">//sem_wait(&amp;s46);//P operation</span>
-
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"run s6\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">sem_wait</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>s67<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//P operation</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"run s7\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">void</span> <span class="token operator">*</span><span class="token function">myThread2</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token comment">//set thread 2</span>
-<span class="token punctuation">{</span>
-    <span class="token function">sem_wait</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>s12<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//P operation</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"run s2\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">sem_post</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>s67<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//V operation</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"run s4\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment">//sem_post(&amp;s46);//V opreation</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"run s5\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token keyword">int</span> ret <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span><span class="token comment">//initialize pthread returned value</span>
-    <span class="token class-name">pthread_t</span> id1<span class="token punctuation">;</span><span class="token comment">//set a pthread's ID=id1</span>
-    <span class="token class-name">pthread_t</span> id2<span class="token punctuation">;</span>
-    <span class="token function">sem_init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>s12<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//initialize sem value,value is 0;type is 0.</span>
-    <span class="token comment">//sem_init(&amp;s46,0,0);</span>
-    <span class="token function">sem_init</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>s67<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    ret <span class="token operator">=</span> <span class="token function">pthread_create</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>id1<span class="token punctuation">,</span><span class="token constant">NULL</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span>myThread1<span class="token punctuation">,</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment">/*set pthread id1,id1's attibute is null,
-    beaginning index,
-    yunxing hanshu de canshu*/</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span><span class="token comment">//ret!=0</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Create pthread id1 error\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    ret <span class="token operator">=</span> <span class="token function">pthread_create</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>id2<span class="token punctuation">,</span><span class="token constant">NULL</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token keyword">void</span> <span class="token operator">*</span><span class="token punctuation">)</span>myThread2<span class="token punctuation">,</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Create pthread id2 error\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">pthread_join</span><span class="token punctuation">(</span>id1<span class="token punctuation">,</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//for waiting id1 end(name,fanhui zhi zhizhen)</span>
-    <span class="token function">pthread_join</span><span class="token punctuation">(</span>id2<span class="token punctuation">,</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">sem_destroy</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>s12<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//clean sem</span>
-    <span class="token comment">//sem_destroy(&amp;s46);</span>
-    <span class="token function">sem_destroy</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>s67<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="PV操作"><a href="#PV操作" class="headerlink" title="PV操作"></a>PV操作</h4><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include "stdio.h"
-#include "stdlib.h"
-struct process{ &nbsp;//进程结构体
-&nbsp; &nbsp; long pid;
-&nbsp; &nbsp; long uid;
-&nbsp; &nbsp; struct process *next;
-};  
-typedef struct semaphore{ &nbsp;//记录型信号量
-&nbsp; &nbsp; int value;
-&nbsp; &nbsp; struct process *L;
-} semaphore;
-
-void PrintBlockQueue(semaphore S){
-&nbsp; &nbsp; struct process *p = S.L;
-&nbsp; &nbsp; printf("此时共享资源数量为: %d\t,阻塞队列：",S.value);
-&nbsp; &nbsp; if(p==NULL){
-&nbsp; &nbsp; &nbsp; &nbsp; printf("NULL\n");
-&nbsp; &nbsp; }else{
-&nbsp; &nbsp; &nbsp; &nbsp; while(p!=NULL){
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf("%d -&gt; ",p-&gt;pid);
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p=p-&gt;next;
-&nbsp; &nbsp; &nbsp; &nbsp; }
-&nbsp; &nbsp; &nbsp; &nbsp; printf("NULL\n");
-&nbsp; &nbsp; }
-}
-
-void ProcessRun(struct process p){
-&nbsp; &nbsp; printf("进程 %d 正在使用资源\n",p.pid);
-}
-
-void block(struct process *&amp;L,struct process P){
-&nbsp; &nbsp; if(L==NULL){
-&nbsp; &nbsp; &nbsp; &nbsp; L=(struct process *) malloc(sizeof(struct process));
-&nbsp; &nbsp; &nbsp; &nbsp; L-&gt;pid = P.pid;
-&nbsp; &nbsp; &nbsp; &nbsp; L-&gt;uid = P.uid;
-&nbsp; &nbsp; &nbsp; &nbsp; L-&gt;next = NULL;
-&nbsp; &nbsp; }else{
-&nbsp; &nbsp; &nbsp; &nbsp; struct process *p = L,*q;
-&nbsp; &nbsp; &nbsp; &nbsp; while (p-&gt;next != NULL){
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p = p-&gt;next;
-&nbsp; &nbsp; &nbsp; &nbsp; }
-&nbsp; &nbsp; &nbsp; &nbsp; q = (struct process *) malloc(sizeof (struct process));
-&nbsp; &nbsp; &nbsp; &nbsp; q-&gt;pid = P.pid;
-&nbsp; &nbsp; &nbsp; &nbsp; q-&gt;uid = P.uid;
-&nbsp; &nbsp; &nbsp; &nbsp; q-&gt;next = NULL;
-&nbsp; &nbsp; &nbsp; &nbsp; p-&gt;next = q;
-&nbsp; &nbsp; }
-}
-
-void wakeup(struct process *&amp;L){
-&nbsp; &nbsp; struct process *p = L;
-&nbsp; &nbsp; struct process P;
-&nbsp; &nbsp; if(L!=NULL){
-&nbsp; &nbsp; &nbsp; &nbsp; P.pid = L-&gt;pid;
-&nbsp; &nbsp; &nbsp; &nbsp; P.uid = L-&gt;uid;
-&nbsp; &nbsp; &nbsp; &nbsp; p = L-&gt;next;
-&nbsp; &nbsp; &nbsp; &nbsp; L = p;
-&nbsp; &nbsp; }
-
-&nbsp; &nbsp; ProcessRun(P);
-
-}
-
-void wait(semaphore &amp;S,struct process p){
-&nbsp; &nbsp; printf("进程 %d 在申请资源 \n",p.pid);
-&nbsp; &nbsp; S.value--;
-&nbsp; &nbsp; if(S.value&lt;0){
-&nbsp; &nbsp; &nbsp; &nbsp; printf("进程 %d 申请资源失败,进入阻塞队列\n");
-&nbsp; &nbsp; &nbsp; &nbsp; block(S.L,p);
-&nbsp; &nbsp; } else{
-&nbsp; &nbsp; &nbsp; &nbsp; ProcessRun(p);
-&nbsp; &nbsp; }
-&nbsp; &nbsp; PrintBlockQueue(S);
-&nbsp; &nbsp; printf("\n");
-}
-
-void signal(semaphore &amp;S,struct process p){
-&nbsp; &nbsp; printf("进程 %d 正在释放资源\n",p.pid);
-&nbsp; &nbsp; S.value++;
-&nbsp; &nbsp; if(S.value &lt;= 0){
-&nbsp; &nbsp; &nbsp; &nbsp; printf("进程 %d 释放资源完毕,存在阻塞进程,将其唤醒\n",p.pid);
-&nbsp; &nbsp; &nbsp; &nbsp; wakeup(S.L);
-&nbsp; &nbsp; } else{
-&nbsp; &nbsp; &nbsp; &nbsp; printf("进程 %d 释放资源完毕,未存在阻塞进程\n",p.pid);
-&nbsp; &nbsp; }
-&nbsp; &nbsp; PrintBlockQueue(S);
-&nbsp; &nbsp; printf("\n");
-}
-
-int main(){
-&nbsp; &nbsp; semaphore S;
-&nbsp; &nbsp; S.value =2; &nbsp;//系统资源
-&nbsp; &nbsp; S.L = NULL;
-
-&nbsp; &nbsp; struct process p1,p2,p3,p4; //4个进程
-&nbsp; &nbsp; p1.pid = 202201; p1.uid =1001;
-&nbsp; &nbsp; p2.pid = 202202; p2.uid =1002;
-&nbsp; &nbsp; p3.pid = 202203; p3.uid =1003;
-&nbsp; &nbsp; p4.pid = 202204; p4.uid =1004;
-
-&nbsp; &nbsp; wait(S,p1); &nbsp; &nbsp; //p1申请资源
-&nbsp; &nbsp; wait(S,p2); &nbsp; &nbsp; //p2申请资源
-&nbsp; &nbsp; wait(S,p3); &nbsp; &nbsp; //p3申请资源
-
-&nbsp; &nbsp; signal(S,p2); &nbsp; //p2释放资源
-&nbsp; &nbsp; wait(S,p4); &nbsp; &nbsp; //p4申请资源
-&nbsp; &nbsp; signal(S,p1); &nbsp;//p1释放资源
-&nbsp; &nbsp; signal(S,p4); &nbsp;//p4释放资源
-&nbsp; &nbsp; signal(S,p3); &nbsp;//p3释放资源
-
-&nbsp; &nbsp; return 0;
-
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>定义：<br>计算机联网是指相互连接的计算设备，它们可以相互交换数据和共享资源。这些联网设备利用称为通信协议的规则系统，通过物理技术或无线技术实现信息传输。</p>
+<p>计算机网络常见的几种体系结构：<br><strong>OSI体系结构</strong>（七层），TCP/IP<strong>体系结构</strong>（四层），五层<strong>体系结构</strong></p>
 
                 
             </div>
@@ -586,7 +391,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2023/02/06/cao-zuo-xi-tong/san-tong-bu-tong-xin-yu-si-suo/">http://example.com/2023/02/06/cao-zuo-xi-tong/san-tong-bu-tong-xin-yu-si-suo/</a>
+                    <a href="http://example.com/2023/02/13/ji-wang/ji-suan-ji-wang-luo-gai-shu/">http://example.com/2023/02/13/ji-wang/ji-suan-ji-wang-luo-gai-shu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -623,15 +428,7 @@ int main(){
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/C/">
-                                    <span class="chip bg-color">C</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -673,9 +470,52 @@ int main(){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/02/13/ji-wang/ji-suan-ji-wang-luo-gai-shu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="计算机网络————概述">
+                        
+                        <span class="card-title">计算机网络————概述</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    计算机网络
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2023/02/09/cao-zuo-xi-tong/si-cun-chu-guan-li/">
                     <div class="card-image">
@@ -693,9 +533,9 @@ int main(){
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -703,59 +543,6 @@ int main(){
                             
                         </span>
                     </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/01/31/cao-zuo-xi-tong/er-zi-yuan-guan-li-qi/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="操作系统————资源管理器">
-                        
-                        <span class="card-title">操作系统————资源管理器</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            处理器管理是操作系统的重要组成部分，负责管理、调度和分配计算机系统的重要资源——处理器，并控制程序执行。
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-31
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-category">
-                                    操作系统
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
                 </div>
                 
             </div>
