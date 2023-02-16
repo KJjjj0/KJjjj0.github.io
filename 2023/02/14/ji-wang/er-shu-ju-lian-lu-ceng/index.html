@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="计算机网络————网络层, BLOG">
+    <meta name="keywords" content="计算机网络————数据链路层, BLOG">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>计算机网络————网络层 | BLOG</title>
+    <title>计算机网络————数据链路层 | BLOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -290,12 +290,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">计算机网络————网络层</h1>
+                    <h1 class="description center-align post-title">计算机网络————数据链路层</h1>
                 </div>
             </div>
         </div>
@@ -338,7 +338,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-15
+                    2023-02-14
                 </div>
                 
 
@@ -363,37 +363,22 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <hr>
-<h1 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h1><h2 id="表示方法"><a href="#表示方法" class="headerlink" title="表示方法"></a>表示方法</h2><p>定义：<br>就是给<mark>连接到互联网</mark>的每一个<mark>主机</mark>的每一个<mark>接口</mark>分配一个唯一的<mark>32位标识符</mark>。<br>    用<strong>点分十进制记法</strong>表示（每8位写成十进制，中间用“.”隔开）<br>$$IP地址 \triangleq{&lt;网络号&gt;,&lt;主机号&gt;}$$<br>没网就无IP地址。<br>前n位为网络号，后（32-n）位为主机号</p>
-<h2 id="分类的IP地址"><a href="#分类的IP地址" class="headerlink" title="分类的IP地址"></a>分类的IP地址</h2><ul>
-<li>单播地址（一对一通信）<ul>
-<li>A类（n=8）</li>
-<li>B类（n=16）</li>
-<li>C类（n=24)</li>
-</ul>
-</li>
-<li>多播地址（一对多通信）<ul>
-<li>D类</li>
-</ul>
-</li>
-<li>保留地址<ul>
-<li>E类</li>
-</ul>
-</li>
-</ul>
+<h1 id="CSMA-x2F-CD协议"><a href="#CSMA-x2F-CD协议" class="headerlink" title="CSMA/CD协议:"></a>CSMA/CD协议:</h1><p>信道所使用的的协议，（PPP协议及CSMA/CD协议）<br>总线上只要有一台计算机在发送数据，总线的传输资源就会被占用。<strong>因此在同一时间内只能允许一台计算机发送数据</strong>，否则各计算机之间就会互相干扰，数据也被破坏。<br><strong>CSMA/CD协议是用来减少冲突发生的概率。</strong></p>
 <hr>
-<h2 id="32位IP地址空间有-2-32-个地址-A类（-2-31-个）-B类（-2-30-个）-C类（-2-29-个"><a href="#32位IP地址空间有-2-32-个地址-A类（-2-31-个）-B类（-2-30-个）-C类（-2-29-个" class="headerlink" title="32位IP地址空间有$2^{32}$个地址- A类（$2^{31}$个）- B类（$2^{30}$个）- C类（$2^{29}$个)"></a>32位IP地址空间有$2^{32}$个地址<br>- A类（$2^{31}$个）<br>- B类（$2^{30}$个）<br>- C类（$2^{29}$个)</h2><p>如何识别（看前四位地址）</p>
+<p>CSMA/CD协议意思是<mark>载波监听多点接入/碰撞检测</mark></p>
+<h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><p><strong>多点接入</strong>:总线型网络，许多计算机以多点接入的方式连接在一根总线上。<br><strong>载波监听</strong>：<em>不管在发送数据之前还是在发送数据之后，每个站都必须不停地检测信道。</em><br>    <mark>发送前</mark>检测是为了避免冲突；如果检测到其他站在发送就停止本站的发送。<br><strong>碰撞检测</strong>：在<mark>发送中</mark>检测信道，及时发现有其他站也在发送，就立即中断本站的发送。<br>    当两个或者以上的站发送数据，总线信号电压变化幅度会增大，就会发生“碰撞”。</p>
+<p>注释：电磁波传播速度是有限的，会有<mark>时延</mark>，因此有时候检测也会发生出错。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在使用此协议时，一个站不可能同时进行发送和接收（但是边发送边监听信道）。<br><em>因此使用 CSMA/CD协议不能进行全双工通信而只能进行双向交替通信</em>。（不懂） </p>
+<h2 id="发送的不确定性"><a href="#发送的不确定性" class="headerlink" title="发送的不确定性"></a>发送的不确定性</h2><p>每个站在发送数据之后的一段时间里，存在遭遇碰撞的风险，这段时间是不确定的，取决与另一个发送数据到本站的距离。</p>
+<h2 id="争用期"><a href="#争用期" class="headerlink" title="争用期"></a>争用期</h2><p>经过争用期这段时间还没检测到碰撞，才能肯定这次发送不会发生碰撞。后续发送的数据就一定不会发生冲突。</p>
+<h2 id="退避算法"><a href="#退避算法" class="headerlink" title="退避算法"></a>退避算法</h2><p><strong>截断二进制指数退避</strong></p>
 <ul>
-<li><p>A类（n=8）0***···</p>
-</li>
-<li><p>B类（n=16）10**···</p>
-</li>
-<li><p>C类（n=24) 110*···</p>
-</li>
-<li><p>D类    1110···</p>
-</li>
-<li><p>E类     1111···</p>
-</li>
+<li>基本退避时间为争用期2$\tau$，为51.2$\mu s$。对于10Mbit/s以太网，可发送512比特（64字节）。</li>
+<li>从离散的整数集合$[0,1,…,(2^{k}-1)]$中随机取一个数，记为r。</li>
+<li>重传应推后的时间就是r倍的争用期，且$$k=Min[重传次数，10]$$</li>
+<li>当重传次数超过16次时，丢弃该帧。</li>
 </ul>
+<h2 id="强化碰撞"><a href="#强化碰撞" class="headerlink" title="强化碰撞"></a>强化碰撞</h2><p><em>以太网的争用期为51.2$\mu s$，不仅考虑到以太网的端到端时延，而且还包括其他因素，如存在的转发器所增加的时延</em></p>
 
                 
             </div>
@@ -420,7 +405,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2023/02/15/ji-wang/wang-luo-ceng/">http://example.com/2023/02/15/ji-wang/wang-luo-ceng/</a>
+                    <a href="http://example.com/2023/02/14/ji-wang/er-shu-ju-lian-lu-ceng/">http://example.com/2023/02/14/ji-wang/er-shu-ju-lian-lu-ceng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -499,12 +484,11 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/02/15/ji-wang/wang-luo-ceng/">
+                <a href="/2023/02/15/ji-wang/san-wang-luo-ceng/">
                     <div class="card-image">
                         
                         
@@ -520,9 +504,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-15
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -535,7 +519,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -546,24 +529,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/02/14/ji-wang/shu-ju-lian-lu-ceng/">
+                <a href="/2023/02/13/ji-wang/yi-ji-suan-ji-wang-luo-gai-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="计算机网络————数据链路层">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="计算机网络————概述">
                         
-                        <span class="card-title">计算机网络————数据链路层</span>
+                        <span class="card-title">计算机网络————概述</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            计算机网络是指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，在网络操作系统，网络管理软件及网络通信协议的管理和协调下，实现资源共享和信息传递的计算机系统。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-13
                             </span>
                         <span class="publish-author">
                             
