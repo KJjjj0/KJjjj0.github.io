@@ -373,11 +373,13 @@
 <li>存储共享</li>
 <li>存储扩充</li>
 </ul>
-<h1 id="可变分区存储管理"><a href="#可变分区存储管理" class="headerlink" title="可变分区存储管理"></a>可变分区存储管理</h1><ul>
-<li>最先适应（first fit）分配算法</li>
-<li>下次适应（next fit）分配算法</li>
-<li>最优适应（best fit）分配算法</li>
-<li>最坏适应（worst fit）分配算法</li>
+<h1 id="存储浪费："><a href="#存储浪费：" class="headerlink" title="存储浪费："></a>存储浪费：</h1><p>存储碎片<br><strong>内部碎片</strong>：某存储区间大于其存放作业空间的部分。<br><strong>外部碎片</strong>：内存某存储区间容不下要运行的作业时。</p>
+<h1 id="可变分区存储管理"><a href="#可变分区存储管理" class="headerlink" title="可变分区存储管理"></a>可变分区存储管理</h1><p><strong>存储浪费</strong>：存储碎片<br><strong>内部碎片</strong>：某存储区间大于其存放作业空间的部分。<br><strong>外部碎片</strong>：内存某存储区间容不下要运行的作业时。</p>
+<ul>
+<li>最先适应（first fit）分配算法<br>思想：顺序查找未分配区表或链表，<em>直至找到第一个能满足长度要求的空闲区为止</em>，分割此分区，一部分分配给作业，另一部分仍为空闲区。</li>
+<li>下次适应（next fit）分配算法<br>思想： 搜索起点不固定，<em>从i+1结点开始</em>搜索(i是上一次分配的节点)。从未分配区的上次扫描结束处顺序查找未分配区表或链表，后同上。</li>
+<li>最优适应（best fit）分配算法<br>思想：首选<em>剩余空间最小</em>的分区</li>
+<li>最坏适应（worst fit）分配算法<br>思想：首选<em>最大空闲区</em></li>
 <li><del>快速适应（quick fit）分配算法</del></li>
 </ul>
 <h1 id="全局页面替换策略"><a href="#全局页面替换策略" class="headerlink" title="全局页面替换策略"></a>全局页面替换策略</h1><ul>
@@ -496,25 +498,66 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/02/06/cao-zuo-xi-tong/san-tong-bu-tong-xin-yu-si-suo/">
+                <a href="/2023/02/02/cao-zuo-xi-tong/wu-she-bei-guan-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="操作系统————同步、通信与死锁">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="操作系统————设备管理">
                         
-                        <span class="card-title">操作系统————同步、通信与死锁</span>
+                        <span class="card-title">操作系统————设备管理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            PV操作
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-06
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-02
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-category">
+                                    操作系统
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/01/31/cao-zuo-xi-tong/er-chu-li-qi-guan-li/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="二、操作系统————处理器管理">
+                        
+                        <span class="card-title">二、操作系统————处理器管理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            处理器管理是操作系统的重要组成部分，负责管理、调度和分配计算机系统的重要资源——处理器，并控制程序执行。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -538,47 +581,6 @@
                         <span class="chip bg-color">算法</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/02/02/cao-zuo-xi-tong/wu-she-bei-guan-li/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="操作系统————设备管理">
-                        
-                        <span class="card-title">操作系统————设备管理</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-02
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-category">
-                                    操作系统
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>
