@@ -4,13 +4,104 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2023/03/20/hello-world/"/>
-      <url>/2023/03/20/hello-world/</url>
+      <title>SpringBoot配置</title>
+      <link href="/2023/03/07/springboot/springboot-pei-zhi/"/>
+      <url>/2023/03/07/springboot/springboot-pei-zhi/</url>
       
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321005217.png" alt="image-20230321005217853"></p><p>1</p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321005835.png" alt="image-20230321005835055"></p>]]></content>
+        <content type="html"><![CDATA[<hr>]]></content>
       
       
+      <categories>
+          
+          <category> SpringBoot </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SpringBoot </tag>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>安卓环境配置</title>
+      <link href="/2023/03/01/an-zhuo/an-zhuo-pei-zhi/"/>
+      <url>/2023/03/01/an-zhuo/an-zhuo-pei-zhi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="jdk配置"><a href="#jdk配置" class="headerlink" title="jdk配置"></a>jdk配置</h1><h2 id="下载jdk"><a href="#下载jdk" class="headerlink" title="下载jdk"></a>下载jdk</h2><p>下载 java 开发工具包 JDK，下载地址：<a href="https://www.oracle.com/java/technologies/downloads/%E3%80%82">https://www.oracle.com/java/technologies/downloads/。</a></p><p>一定要下载对应版本的jdk</p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321124900.png"></p><h2 id="安装android-studio"><a href="#安装android-studio" class="headerlink" title="安装android studio"></a>安装android studio</h2><p>一直点next</p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321125915.png" alt="image-20230321125915655">**</p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321130307.png" alt="image-20230321130307455"></p><p>再点击finish</p><h2 id="安装sdk"><a href="#安装sdk" class="headerlink" title="安装sdk"></a>安装sdk</h2><p>默认安装对应版本的sdk</p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321130540.png" alt="image-20230321130540603"></p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321130843.png" alt="image-20230321130843594"></p><h2 id="创建模拟器"><a href="#创建模拟器" class="headerlink" title="创建模拟器"></a>创建模拟器</h2><p>首先选择创建一个new project</p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321131235.png" alt="image-20230321131235801"></p><p>选择语言和兼容的安卓版本</p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321131421.png" alt="image-20230321131421078"></p><p>创建成功</p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321131554.png" alt="image-20230321131554439"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android入门 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> android </tag>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue开发基础</title>
+      <link href="/2022/12/07/vue-kai-fa-ji-chu/"/>
+      <url>/2022/12/07/vue-kai-fa-ji-chu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="脚手架安装"><a href="#脚手架安装" class="headerlink" title="脚手架安装"></a>脚手架安装</h1><h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><pre><code> 1、vue create 221109_cli_demo 2、$ cd 221109_cli_demo 3、$ npm run serve</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Web入门——文本基础</title>
+      <link href="/2022/12/07/wen-ben-ji-chu/"/>
+      <url>/2022/12/07/wen-ben-ji-chu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Html"><a href="#Html" class="headerlink" title="Html"></a>Html</h1><h2 id="文本基础"><a href="#文本基础" class="headerlink" title="文本基础"></a>文本基础</h2><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4>   <ol>        <li>沿着这条路走到头</li>        <li>jiuzoubudaole</li>    </ol><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><ul>    <li>沿着这条路走到头</li>    <li>jiuzoubudaole</li></ul><h3 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h3><pre><code class="html">&lt;em&gt;斜体&lt;strong&gt;粗体</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web入门 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Html </tag>
+            
+        </tags>
       
     </entry>
     
