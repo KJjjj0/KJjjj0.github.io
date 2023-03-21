@@ -89,31 +89,6 @@
     
     
     <entry>
-      <title>vue开发基础</title>
-      <link href="/2022/12/07/vue-kai-fa-ji-chu/"/>
-      <url>/2022/12/07/vue-kai-fa-ji-chu/</url>
-      
-        <content type="html"><![CDATA[<h1 id="脚手架安装"><a href="#脚手架安装" class="headerlink" title="脚手架安装"></a>脚手架安装</h1><h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><pre><code> 1、vue create 221109_cli_demo 2、$ cd 221109_cli_demo 3、$ npm run serve</code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> Vue </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Vue </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Web入门——文本基础</title>
       <link href="/2022/12/07/wen-ben-ji-chu/"/>
       <url>/2022/12/07/wen-ben-ji-chu/</url>
@@ -131,6 +106,31 @@
         <tags>
             
             <tag> Html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue开发基础</title>
+      <link href="/2022/12/07/vue-kai-fa-ji-chu/"/>
+      <url>/2022/12/07/vue-kai-fa-ji-chu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="脚手架安装"><a href="#脚手架安装" class="headerlink" title="脚手架安装"></a>脚手架安装</h1><h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><pre><code> 1、vue create 221109_cli_demo 2、$ cd 221109_cli_demo 3、$ npm run serve</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
             
         </tags>
       
