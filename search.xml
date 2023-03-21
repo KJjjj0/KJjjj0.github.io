@@ -66,7 +66,7 @@
       <link href="/2023/03/01/git/git-ben-di-cang-ku-dao-github/"/>
       <url>/2023/03/01/git/git-ben-di-cang-ku-dao-github/</url>
       
-        <content type="html"><![CDATA[<h1 id="上传步骤"><a href="#上传步骤" class="headerlink" title="上传步骤"></a>上传步骤</h1><pre><code>1.git init //工作空间创建.git文件夹（默认隐藏了该文件夹） 2.git add . //添加到暂存区 3.git commit -m &quot;你的提交注释注释&quot; 4.git remote add origin http://xxxxxxxxx.git //本地仓库和远程github关联 5.git pull --rebase origin master //远程有readme.md，拉一下 (感觉没必要)6.git push -u origin master //代码合并</code></pre><h1 id="错误解决办法"><a href="#错误解决办法" class="headerlink" title="错误解决办法"></a>错误解决办法</h1><h2 id="TLS-certificate-verification-has-been-disabled-错误"><a href="#TLS-certificate-verification-has-been-disabled-错误" class="headerlink" title="TLS certificate verification has been disabled!错误"></a>TLS certificate verification has been disabled!错误</h2><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321162745.png"></p><pre><code> git config --global http.sslVerify true</code></pre><p>[参考]<a href="https://www.cnblogs.com/wuhairui/p/15701177.html">https://www.cnblogs.com/wuhairui/p/15701177.html</a></p><h2 id="git-push错误failed-to-push-some-refs-to"><a href="#git-push错误failed-to-push-some-refs-to" class="headerlink" title="git push错误failed to push some refs to"></a>git push错误failed to push some refs to</h2><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321163002.png"><br>输入：</p><pre><code>git pull --rebase origin master</code></pre><p>成功解决：<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321163404.png"><br>[参考]:<a href="https://blog.csdn.net/qq_39416311/article/details/102219428">https://blog.csdn.net/qq_39416311/article/details/102219428</a></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="上传步骤"><a href="#上传步骤" class="headerlink" title="上传步骤"></a>上传步骤</h1><pre class="line-numbers language-none"><code class="language-none">1.git init &#x2F;&#x2F;工作空间创建.git文件夹（默认隐藏了该文件夹） 2.git add . &#x2F;&#x2F;添加到暂存区 3.git commit -m &quot;你的提交注释注释&quot; 4.git remote add origin http:&#x2F;&#x2F;xxxxxxxxx.git &#x2F;&#x2F;本地仓库和远程github关联 5.git pull --rebase origin master &#x2F;&#x2F;远程有readme.md，拉一下 (感觉没必要)6.git push -u origin master &#x2F;&#x2F;代码合并<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h1 id="错误解决办法"><a href="#错误解决办法" class="headerlink" title="错误解决办法"></a>错误解决办法</h1><h2 id="TLS-certificate-verification-has-been-disabled-错误"><a href="#TLS-certificate-verification-has-been-disabled-错误" class="headerlink" title="TLS certificate verification has been disabled!错误"></a>TLS certificate verification has been disabled!错误</h2><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321162745.png"></p><pre class="line-numbers language-none"><code class="language-none">git config --global http.sslVerify true<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>[参考]<a href="https://www.cnblogs.com/wuhairui/p/15701177.html">https://www.cnblogs.com/wuhairui/p/15701177.html</a></p><h2 id="git-push错误failed-to-push-some-refs-to"><a href="#git-push错误failed-to-push-some-refs-to" class="headerlink" title="git push错误failed to push some refs to"></a>git push错误failed to push some refs to</h2><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321163002.png"><br>输入：</p><pre class="line-numbers language-none"><code class="language-none">git pull --rebase origin master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>成功解决：<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321163404.png"><br>[参考]:<a href="https://blog.csdn.net/qq_39416311/article/details/102219428">https://blog.csdn.net/qq_39416311/article/details/102219428</a></p>]]></content>
       
       
       <categories>
@@ -116,31 +116,6 @@
     
     
     <entry>
-      <title>Web入门——文本基础</title>
-      <link href="/2022/12/07/wen-ben-ji-chu/"/>
-      <url>/2022/12/07/wen-ben-ji-chu/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Html"><a href="#Html" class="headerlink" title="Html"></a>Html</h1><h2 id="文本基础"><a href="#文本基础" class="headerlink" title="文本基础"></a>文本基础</h2><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4>   <ol>        <li>沿着这条路走到头</li>        <li>jiuzoubudaole</li>    </ol><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><ul>    <li>沿着这条路走到头</li>    <li>jiuzoubudaole</li></ul><h3 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h3><pre><code class="html">&lt;em&gt;斜体&lt;strong&gt;粗体</code></pre><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321135910.png" alt="image.png"></p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321135940.png" alt="image.png"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Web入门 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Html </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>vue开发基础</title>
       <link href="/2022/12/07/vue-kai-fa-ji-chu/"/>
       <url>/2022/12/07/vue-kai-fa-ji-chu/</url>
@@ -158,6 +133,31 @@
         <tags>
             
             <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Web入门——文本基础</title>
+      <link href="/2022/12/07/wen-ben-ji-chu/"/>
+      <url>/2022/12/07/wen-ben-ji-chu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Html"><a href="#Html" class="headerlink" title="Html"></a>Html</h1><h2 id="文本基础"><a href="#文本基础" class="headerlink" title="文本基础"></a>文本基础</h2><h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4>   <ol>        <li>沿着这条路走到头</li>        <li>jiuzoubudaole</li>    </ol><h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><ul>    <li>沿着这条路走到头</li>    <li>jiuzoubudaole</li></ul><h3 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h3><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span><span class="token punctuation">></span></span>斜体<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">></span></span>粗体<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321135910.png" alt="image.png"></p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321135940.png" alt="image.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web入门 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Html </tag>
             
         </tags>
       
