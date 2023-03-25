@@ -5,8 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="SpringBoot配置, K.S.J &#39; Blog">
-    <meta name="description" content="
-">
+    <meta name="description" content="Spring Boot是Spring家族的成员，它是一个全新的框架，它的设计目的是尽可能简单和快速的开发、运行Spring应用程序，简化配置。它为开发者快捷的使用Spring及相关开发框架提供了便利，但是它并不是微服务的框架，它只是为微服务框架的使用也提供了很好的脚手架。初学者操作，仅供参考">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -398,14 +397,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-03-21
+                    2023-03-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    305
                 </div>
                 
 
@@ -436,6 +435,27 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <hr>
+<h1 id="Maven初始化设置"><a href="#Maven初始化设置" class="headerlink" title="Maven初始化设置"></a>Maven初始化设置</h1><h2 id="jdk"><a href="#jdk" class="headerlink" title="jdk"></a>jdk</h2><p>在<strong>New Project</strong>对话框的左侧选中<strong>Maven</strong>，选择JDK版本，这里选择的是1.8.0.<br>即可点击<strong>Next</strong>到下一步<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230325230703.png"></p>
+<h2 id="project设置"><a href="#project设置" class="headerlink" title="project设置"></a>project设置</h2><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230325231021.png"></p>
+<h2 id="添加并使用依赖项"><a href="#添加并使用依赖项" class="headerlink" title="添加并使用依赖项"></a>添加并使用依赖项</h2><p>默认打开如下<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230325231524.png"><br>如2自动打开一个xml脚本文件，该文件在项目的根目录下，项目中需要添加依赖时，相关的代码就需要配置在这个文件中。<br>1中文件有main和test两个文件夹，<strong>main</strong>文件夹用于存放正式使用的相关文件，例如Java类、各种配置文件等，<strong>test</strong>用于存放开发过程中测试时使用的文件，当项目最终编译、打包、部署到服务器时，<strong>test</strong>文件夹下的所有内容将不会参与这个过程。</p>
+<h3 id="在pom-xml文件中添加如下"><a href="#在pom-xml文件中添加如下" class="headerlink" title="在pom.xml文件中添加如下"></a>在pom.xml文件中添加如下</h3><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>properties</span><span class="token punctuation">></span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maven.compiler.source</span><span class="token punctuation">></span></span>8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maven.compiler.source</span><span class="token punctuation">></span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>maven.compiler.target</span><span class="token punctuation">></span></span>8<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>maven.compiler.target</span><span class="token punctuation">></span></span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>properties</span><span class="token punctuation">></span></span>  
+<span class="token comment">&lt;!--引入SpringBoot依赖--></span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent</span><span class="token punctuation">></span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-parent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.1.3.RELEASE<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parent</span><span class="token punctuation">></span></span>  
+  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>  
+    <span class="token comment">&lt;!--web场景依赖启动器--></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>  
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="如果显示错误"><a href="#如果显示错误" class="headerlink" title="如果显示错误"></a>如果显示错误</h3><p>选中project右键<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230325234247.png" alt="image.png"></p>
 
                 
             </div>
@@ -911,7 +931,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">731</span>
+                        class="white-color">997</span>
             
             
             

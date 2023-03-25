@@ -418,7 +418,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    351
+                    312
                 </div>
                 
 
@@ -473,12 +473,12 @@ int main(int argc,char *argv[])
 <h2 id="编译执行"><a href="#编译执行" class="headerlink" title="编译执行"></a>编译执行</h2><p>+一个终端<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321212456.png"><br>再加一个终端</p>
 <p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321212518.png"><br>如上编译成功</p>
 <h1 id="launch文件实现多个节点编译"><a href="#launch文件实现多个节点编译" class="headerlink" title="launch文件实现多个节点编译"></a>launch文件实现多个节点编译</h1><h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><p>在功能包下创建launch文件夹<br>在该文件夹下可创建launch文件<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321212748.png"></p>
-<h2 id="编译launch文件内容"><a href="#编译launch文件内容" class="headerlink" title="编译launch文件内容"></a>编译launch文件内容</h2><pre class="line-numbers language-launch" data-language="launch"><code class="language-launch">&lt;launch&gt;
-    &lt;node pkg&#x3D;&quot;kj_mpkg&quot; type&#x3D;&quot;hello&quot; name&#x3D;&quot;hello&quot; output&#x3D;&quot;screen&quot;&#x2F;&gt;
-    &lt;node pkg&#x3D;&quot;turtlesim&quot; type&#x3D;&quot;turtlesim_node&quot; name&#x3D;&quot;t1&quot; &#x2F;&gt;
-    &lt;node pkg&#x3D;&quot;turtlesim&quot; type&#x3D;&quot;turtle_teleop_key&quot; name&#x3D;&quot;key1&quot; &#x2F;&gt;
+<h2 id="编译launch文件内容"><a href="#编译launch文件内容" class="headerlink" title="编译launch文件内容"></a>编译launch文件内容</h2><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>launch</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>node</span> <span class="token attr-name">pkg</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>kj_mpkg<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hello<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>hello<span class="token punctuation">"</span></span> <span class="token attr-name">output</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>screen<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>node</span> <span class="token attr-name">pkg</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>turtlesim<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>turtlesim_node<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>t1<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>node</span> <span class="token attr-name">pkg</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>turtlesim<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>turtle_teleop_key<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>key1<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
 
-&lt;&#x2F;launch&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>launch</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321212949.png"><br>第一个是编写的C++hello节点，第二个是小乌龟测试节点，第三个是鼠标节点。</p>
 <h2 id="实现运行多个节点"><a href="#实现运行多个节点" class="headerlink" title="实现运行多个节点"></a>实现运行多个节点</h2><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321213033.png"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321213038.png"><br>运行成功！</p>
@@ -692,7 +692,7 @@ int main(int argc,char *argv[])
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            Spring Boot是Spring家族的成员，它是一个全新的框架，它的设计目的是尽可能简单和快速的开发、运行Spring应用程序，简化配置。它为开发者快捷的使用Spring及相关开发框架提供了便利，但是它并不是微服务的框架，它只是为微服务框架的使用也提供了很好的脚手架。初学者操作，仅供参考
                         
                     </div>
                     <div class="publish-info">
@@ -963,7 +963,7 @@ int main(int argc,char *argv[])
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">731</span>
+                        class="white-color">997</span>
             
             
             
