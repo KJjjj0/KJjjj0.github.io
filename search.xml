@@ -161,33 +161,6 @@
     
     
     <entry>
-      <title>安卓环境配置</title>
-      <link href="/2023/03/01/an-zhuo/an-zhuo-kai-fa-huan-jing-pei-zhi/"/>
-      <url>/2023/03/01/an-zhuo/an-zhuo-kai-fa-huan-jing-pei-zhi/</url>
-      
-        <content type="html"><![CDATA[<h1 id="jdk配置"><a href="#jdk配置" class="headerlink" title="jdk配置"></a>jdk配置</h1><h2 id="下载jdk"><a href="#下载jdk" class="headerlink" title="下载jdk"></a>下载jdk</h2><p>下载 java 开发工具包 JDK，下载地址：<a href="https://www.oracle.com/java/technologies/downloads/%E3%80%82">https://www.oracle.com/java/technologies/downloads/。</a></p><p>一定要下载对应版本的jdk</p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321124900.png"></p><h2 id="安装android-studio"><a href="#安装android-studio" class="headerlink" title="安装android studio"></a>安装android studio</h2><p>一直点next<img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321125915.png" alt="image-20230321125915655">**</p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321130307.png"></p><p>再点击finish</p><h2 id="安装sdk"><a href="#安装sdk" class="headerlink" title="安装sdk"></a>安装sdk</h2><p>默认安装对应版本的sdk</p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321130540.png"></p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321130843.png"></p><h2 id="创建模拟器"><a href="#创建模拟器" class="headerlink" title="创建模拟器"></a>创建模拟器</h2><p>首先选择创建一个new project</p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321131235.png"></p><p>选择语言和兼容的安卓版本</p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321131421.png"></p><p>创建成功<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321131554.png"></p><h2 id="安装安卓模拟器"><a href="#安装安卓模拟器" class="headerlink" title="安装安卓模拟器"></a>安装安卓模拟器</h2><p>1、这里使用的是夜神模拟器<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321141014.png"></p><p>2、安装成功<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321141457.png" alt="image.png"></p><p>类似手游模拟器，随便找一个熟悉能模拟安卓环境的就行<br>或者使用搁置的安卓手机。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Android入门 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> android </tag>
-            
-            <tag> java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Git 本地仓库到github</title>
       <link href="/2023/03/01/git/git-ben-di-cang-ku-dao-github/"/>
       <url>/2023/03/01/git/git-ben-di-cang-ku-dao-github/</url>
@@ -207,6 +180,33 @@
             <tag> Git </tag>
             
             <tag> cmd </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>安卓环境配置</title>
+      <link href="/2023/03/01/an-zhuo/an-zhuo-kai-fa-huan-jing-pei-zhi/"/>
+      <url>/2023/03/01/an-zhuo/an-zhuo-kai-fa-huan-jing-pei-zhi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="jdk配置"><a href="#jdk配置" class="headerlink" title="jdk配置"></a>jdk配置</h1><h2 id="下载jdk"><a href="#下载jdk" class="headerlink" title="下载jdk"></a>下载jdk</h2><p>下载 java 开发工具包 JDK，下载地址：<a href="https://www.oracle.com/java/technologies/downloads/%E3%80%82">https://www.oracle.com/java/technologies/downloads/。</a></p><p>一定要下载对应版本的jdk</p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321124900.png"></p><h2 id="安装android-studio"><a href="#安装android-studio" class="headerlink" title="安装android studio"></a>安装android studio</h2><p>一直点next<img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321125915.png" alt="image-20230321125915655">**</p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321130307.png"></p><p>再点击finish</p><h2 id="安装sdk"><a href="#安装sdk" class="headerlink" title="安装sdk"></a>安装sdk</h2><p>默认安装对应版本的sdk</p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321130540.png"></p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321130843.png"></p><h2 id="创建模拟器"><a href="#创建模拟器" class="headerlink" title="创建模拟器"></a>创建模拟器</h2><p>首先选择创建一个new project</p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321131235.png"></p><p>选择语言和兼容的安卓版本</p><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321131421.png"></p><p>创建成功<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321131554.png"></p><h2 id="安装安卓模拟器"><a href="#安装安卓模拟器" class="headerlink" title="安装安卓模拟器"></a>安装安卓模拟器</h2><p>1、这里使用的是夜神模拟器<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321141014.png"></p><p>2、安装成功<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321141457.png" alt="image.png"></p><p>类似手游模拟器，随便找一个熟悉能模拟安卓环境的就行<br>或者使用搁置的安卓手机。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android入门 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> android </tag>
+            
+            <tag> java </tag>
             
         </tags>
       
