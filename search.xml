@@ -95,33 +95,6 @@
     
     
     <entry>
-      <title>Git 本地仓库到github</title>
-      <link href="/2023/03/01/git/git-ben-di-cang-ku-dao-github/"/>
-      <url>/2023/03/01/git/git-ben-di-cang-ku-dao-github/</url>
-      
-        <content type="html"><![CDATA[<h1 id="上传步骤"><a href="#上传步骤" class="headerlink" title="上传步骤"></a>上传步骤</h1><pre class="line-numbers language-none"><code class="language-none">1.git init &#x2F;&#x2F;工作空间创建.git文件夹（默认隐藏了该文件夹） 2.git add . &#x2F;&#x2F;添加到暂存区 3.git commit -m &quot;你的提交注释注释&quot; 4.git remote add origin http:&#x2F;&#x2F;xxxxxxxxx.git &#x2F;&#x2F;本地仓库和远程github关联 5.git pull --rebase origin master &#x2F;&#x2F;远程有readme.md，拉一下 (感觉没必要)6.git push -u origin master &#x2F;&#x2F;代码合并<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h1 id="错误解决办法"><a href="#错误解决办法" class="headerlink" title="错误解决办法"></a>错误解决办法</h1><h2 id="TLS-certificate-verification-has-been-disabled-错误"><a href="#TLS-certificate-verification-has-been-disabled-错误" class="headerlink" title="TLS certificate verification has been disabled!错误"></a>TLS certificate verification has been disabled!错误</h2><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321162745.png"></p><pre class="line-numbers language-none"><code class="language-none">git config --global http.sslVerify true<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>[参考]<a href="https://www.cnblogs.com/wuhairui/p/15701177.html">https://www.cnblogs.com/wuhairui/p/15701177.html</a></p><h2 id="git-push错误failed-to-push-some-refs-to"><a href="#git-push错误failed-to-push-some-refs-to" class="headerlink" title="git push错误failed to push some refs to"></a>git push错误failed to push some refs to</h2><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321163002.png"><br>输入：</p><pre class="line-numbers language-none"><code class="language-none">git pull --rebase origin master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>成功解决：<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321163404.png"><br>[参考]<a href="https://blog.csdn.net/qq_39416311/article/details/102219428">https://blog.csdn.net/qq_39416311/article/details/102219428</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Git入门 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Git </tag>
-            
-            <tag> cmd </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>安卓环境配置</title>
       <link href="/2023/03/01/an-zhuo/an-zhuo-kai-fa-huan-jing-pei-zhi/"/>
       <url>/2023/03/01/an-zhuo/an-zhuo-kai-fa-huan-jing-pei-zhi/</url>
@@ -141,6 +114,33 @@
             <tag> android </tag>
             
             <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git 本地仓库到github</title>
+      <link href="/2023/03/01/git/git-ben-di-cang-ku-dao-github/"/>
+      <url>/2023/03/01/git/git-ben-di-cang-ku-dao-github/</url>
+      
+        <content type="html"><![CDATA[<h1 id="上传步骤"><a href="#上传步骤" class="headerlink" title="上传步骤"></a>上传步骤</h1><pre class="line-numbers language-none"><code class="language-none">1.git init &#x2F;&#x2F;工作空间创建.git文件夹（默认隐藏了该文件夹） 2.git add . &#x2F;&#x2F;添加到暂存区 3.git commit -m &quot;你的提交注释注释&quot; 4.git remote add origin http:&#x2F;&#x2F;xxxxxxxxx.git &#x2F;&#x2F;本地仓库和远程github关联 5.git pull --rebase origin master &#x2F;&#x2F;远程有readme.md，拉一下 (感觉没必要)6.git push -u origin master &#x2F;&#x2F;代码合并<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h1 id="错误解决办法"><a href="#错误解决办法" class="headerlink" title="错误解决办法"></a>错误解决办法</h1><h2 id="TLS-certificate-verification-has-been-disabled-错误"><a href="#TLS-certificate-verification-has-been-disabled-错误" class="headerlink" title="TLS certificate verification has been disabled!错误"></a>TLS certificate verification has been disabled!错误</h2><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321162745.png"></p><pre class="line-numbers language-none"><code class="language-none">git config --global http.sslVerify true<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>[参考]<a href="https://www.cnblogs.com/wuhairui/p/15701177.html">https://www.cnblogs.com/wuhairui/p/15701177.html</a></p><h2 id="git-push错误failed-to-push-some-refs-to"><a href="#git-push错误failed-to-push-some-refs-to" class="headerlink" title="git push错误failed to push some refs to"></a>git push错误failed to push some refs to</h2><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321163002.png"><br>输入：</p><pre class="line-numbers language-none"><code class="language-none">git pull --rebase origin master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>成功解决：<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321163404.png"><br>[参考]<a href="https://blog.csdn.net/qq_39416311/article/details/102219428">https://blog.csdn.net/qq_39416311/article/details/102219428</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Git入门 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+            <tag> cmd </tag>
             
         </tags>
       
