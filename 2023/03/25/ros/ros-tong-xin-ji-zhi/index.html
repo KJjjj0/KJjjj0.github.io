@@ -420,14 +420,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    2.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    10 分
                 </div>
                 
 
@@ -631,10 +631,48 @@ float64 height <span aria-hidden="true" class="line-numbers-rows"><span></span><
 <pre class="line-numbers language-none"><code class="language-none">&lt; build _ depend &gt; message _ generation &lt;&#x2F; build _ depend &gt;
 &lt; exec _ depend &gt; message _ runtime &lt;&#x2F; exec _ depend &gt;
 &lt;!--exce _ depend 以前对应的是 run _ depend 现在非法--&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="在CMakeLists-txt中编辑-msg-相关配置"><a href="#在CMakeLists-txt中编辑-msg-相关配置" class="headerlink" title="在CMakeLists.txt中编辑 msg 相关配置"></a>在CMakeLists.txt中编辑 msg 相关配置</h4><p>tips：（Ctrl+F快速搜索）</p>
+<pre class="line-numbers language-none"><code class="language-none">find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  rospy
+  std_msgs
+  message_generation
+)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="vscode配置"><a href="#vscode配置" class="headerlink" title="vscode配置"></a>vscode配置</h4><p>c_cpp_properties.json配置文件默认是不会产生的，ctrl+shift+p 再输入configuration选择后便会出现。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230404211404.png" alt="image.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230404211217.png"></p>
+<p> 配置 msg 源文件<br> <pre class="line-numbers language-none"><code class="language-none">add_message_files(
+  FILES
+  Person.msg
+)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></p>
+<p> 生成消息时依赖于 std_msgs</p>
+<pre class="line-numbers language-none"><code class="language-none">generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>执行时依赖</p>
+<pre class="line-numbers language-none"><code class="language-none">catkin_package(
+#  INCLUDE_DIRS include
+#  LIBRARIES demo02_talker_listener
+  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime 
+# 只要这行，后面加上message_runtime就行
+#  DEPENDS system_lib
+)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h4><p>Ctrl+Shift+B编译<br>可以看到C++需要调用的中间文件：<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230404224911.png"></p>
+<p>py文件需要的：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230404225208.png"></p>
+<h3 id="话题通信自定义msg调用A-C"><a href="#话题通信自定义msg调用A-C" class="headerlink" title="话题通信自定义msg调用A(C++)"></a>话题通信自定义msg调用A(C++)</h3><p>编写发布订阅实现，要求发布方以10HZ(每秒10次)的频率发布自定义消息，订阅方订阅自定义消息并将消息内容打印输出</p>
+<ol>
+<li>编写发布方实现；</li>
+<li>编写订阅方实现；</li>
+<li>编辑配置文件；</li>
+<li>编译并执行。</li>
+</ol>
+<h4 id="vscode配置"><a href="#vscode配置" class="headerlink" title="vscode配置"></a>vscode配置</h4><p>c_cpp_properties.json配置文件默认是不会产生的，<strong>ctrl+shift+p 再输入configuration选择后便会出现</strong>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230404211404.png"></p>
 <pre class="line-numbers language-none"><code class="language-none">&#123;
   &quot;configurations&quot;: [
     &#123;
@@ -657,7 +695,95 @@ float64 height <span aria-hidden="true" class="line-numbers-rows"><span></span><
   &quot;version&quot;: 4
 &#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>运行成功<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230404223438.png" alt="image.png"></p>
+<h4 id="发布方"><a href="#发布方" class="headerlink" title="发布方"></a>发布方</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">/*
+    需求: 循环发布人的信息
+
+*/</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"ros/ros.h"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"/home/kjjj/demo03_ws/devel/include/talkerToListener/Person.h"</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token function">setlocale</span><span class="token punctuation">(</span>LC_ALL<span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//1.初始化 ROS 节点</span>
+    ros<span class="token double-colon punctuation">::</span><span class="token function">init</span><span class="token punctuation">(</span>argc<span class="token punctuation">,</span>argv<span class="token punctuation">,</span><span class="token string">"person_talker"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//2.创建 ROS 句柄</span>
+    ros<span class="token double-colon punctuation">::</span>NodeHandle nh<span class="token punctuation">;</span>
+
+    <span class="token comment">//3.创建发布者对象</span>
+    ros<span class="token double-colon punctuation">::</span>Publisher pub <span class="token operator">=</span> nh<span class="token punctuation">.</span><span class="token generic-function"><span class="token function">advertise</span><span class="token generic class-name"><span class="token operator">&lt;</span>talkerToListener<span class="token double-colon punctuation">::</span>Person<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token string">"chatter_person"</span><span class="token punctuation">,</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//4.组织被发布的消息，编写发布逻辑并发布消息</span>
+    talkerToListener<span class="token double-colon punctuation">::</span>Person p<span class="token punctuation">;</span>
+    p<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"sunwukong"</span><span class="token punctuation">;</span>
+    p<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">2000</span><span class="token punctuation">;</span>
+    p<span class="token punctuation">.</span>height <span class="token operator">=</span> <span class="token number">1.45</span><span class="token punctuation">;</span>
+
+    ros<span class="token double-colon punctuation">::</span>Rate <span class="token function">r</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>ros<span class="token double-colon punctuation">::</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        pub<span class="token punctuation">.</span><span class="token function">publish</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        p<span class="token punctuation">.</span>age <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token function">ROS_INFO</span><span class="token punctuation">(</span><span class="token string">"我叫:%s,今年%d岁,高%.2f米"</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> p<span class="token punctuation">.</span>age<span class="token punctuation">,</span> p<span class="token punctuation">.</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        r<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ros<span class="token double-colon punctuation">::</span><span class="token function">spinOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="订阅方-1"><a href="#订阅方-1" class="headerlink" title="订阅方"></a>订阅方</h4><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">/*
+    需求: 订阅人的信息
+
+*/</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"ros/ros.h"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"/home/kjjj/demo03_ws/devel/include/talkerToListener/Person.h"</span></span>
+
+<span class="token keyword">void</span> <span class="token function">doPerson</span><span class="token punctuation">(</span><span class="token keyword">const</span> talkerToListener<span class="token double-colon punctuation">::</span>Person<span class="token double-colon punctuation">::</span>ConstPtr<span class="token operator">&amp;</span> person_p<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+    <span class="token function">ROS_INFO</span><span class="token punctuation">(</span><span class="token string">"订阅的人信息:%s, %d, %.2f"</span><span class="token punctuation">,</span> person_p<span class="token operator">-></span>name<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> person_p<span class="token operator">-></span>age<span class="token punctuation">,</span> person_p<span class="token operator">-></span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>   
+    <span class="token function">setlocale</span><span class="token punctuation">(</span>LC_ALL<span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//1.初始化 ROS 节点</span>
+    ros<span class="token double-colon punctuation">::</span><span class="token function">init</span><span class="token punctuation">(</span>argc<span class="token punctuation">,</span>argv<span class="token punctuation">,</span><span class="token string">"person_listener"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//2.创建 ROS 句柄</span>
+    ros<span class="token double-colon punctuation">::</span>NodeHandle nh<span class="token punctuation">;</span>
+    <span class="token comment">//3.创建订阅对象</span>
+    ros<span class="token double-colon punctuation">::</span>Subscriber sub <span class="token operator">=</span> nh<span class="token punctuation">.</span><span class="token generic-function"><span class="token function">subscribe</span><span class="token generic class-name"><span class="token operator">&lt;</span>talkerToListener<span class="token double-colon punctuation">::</span>Person<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token string">"chatter_person"</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span>doPerson<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//4.回调函数中处理 person</span>
+
+    <span class="token comment">//5.ros::spin();</span>
+    ros<span class="token double-colon punctuation">::</span><span class="token function">spin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="配置CMakeLists-txt"><a href="#配置CMakeLists-txt" class="headerlink" title="配置CMakeLists.txt"></a>配置CMakeLists.txt</h4><pre class="line-numbers language-none"><code class="language-none">add_executable(person_talker src&#x2F;person_talker.cpp)
+add_executable(person_listener src&#x2F;person_listener.cpp)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">add_dependencies(person_talker $&#123;PROJECT_NAME&#125;_generate_messages_cpp)
+add_dependencies(person_listener $&#123;PROJECT_NAME&#125;_generate_messages_cpp)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>注意这里应该在add_executable之后</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230404230103.png"></p>
+<p>如果出现错误：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230404230222.png"></p>
+<p>这里是因为你修改的时候改错了，在add_executable之上也有add_dependencise()</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230404230517.png"></p>
+<h3 id="运行成功"><a href="#运行成功" class="headerlink" title="运行成功"></a>运行成功</h3><p>至此可以在终端运行，方法如前文所述：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230404223438.png"></p>
 
                 
             </div>
@@ -1151,7 +1277,7 @@ float64 height <span aria-hidden="true" class="line-numbers-rows"><span></span><
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">3.1k</span>
+                        class="white-color">3.6k</span>
             
             
             
