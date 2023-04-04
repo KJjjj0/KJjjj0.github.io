@@ -413,21 +413,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-03-28
+                    2023-04-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.6k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
 
@@ -623,6 +623,41 @@ target_link_libraries(talker
 rosrun talkerToListener talker
 </code></pre>
 <p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230328220406.png"></p>
+<h3 id="话题通信自定义-msg"><a href="#话题通信自定义-msg" class="headerlink" title="话题通信自定义 msg"></a>话题通信自定义 msg</h3><h4 id="定义-msg-文件"><a href="#定义-msg-文件" class="headerlink" title="定义 msg 文件"></a>定义 msg 文件</h4><p>在功能包下新建 msg 目录，添加文件 Person . msg</p>
+<pre class="line-numbers language-none"><code class="language-none">string name 
+uint16 age 
+float64 height <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="编辑配置文件"><a href="#编辑配置文件" class="headerlink" title="编辑配置文件"></a>编辑配置文件</h4><p>在 package . xml 中添加编译依赖与执行依赖</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt; build _ depend &gt; message _ generation &lt;&#x2F; build _ depend &gt;
+&lt; exec _ depend &gt; message _ runtime &lt;&#x2F; exec _ depend &gt;
+&lt;!--exce _ depend 以前对应的是 run _ depend 现在非法--&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="vscode配置"><a href="#vscode配置" class="headerlink" title="vscode配置"></a>vscode配置</h4><p>c_cpp_properties.json配置文件默认是不会产生的，ctrl+shift+p 再输入configuration选择后便会出现。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230404211404.png" alt="image.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230404211217.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">&#123;
+  &quot;configurations&quot;: [
+    &#123;
+      &quot;browse&quot;: &#123;
+        &quot;databaseFilename&quot;: &quot;$&#123;default&#125;&quot;,
+        &quot;limitSymbolsToIncludedHeaders&quot;: false
+      &#125;,
+      &quot;includePath&quot;: [
+        &quot;&#x2F;opt&#x2F;ros&#x2F;noetic&#x2F;include&#x2F;**&quot;,
+        &quot;&#x2F;usr&#x2F;include&#x2F;**&quot;,
+        &quot;&#x2F;home&#x2F;kjjj&#x2F;demo03_ws&#x2F;devel&#x2F;include&#x2F;**&quot;&#x2F;&#x2F;配置head文件的路径
+      ],
+      &quot;name&quot;: &quot;ROS&quot;,
+      &quot;intelliSenseMode&quot;: &quot;gcc-x64&quot;,
+      &quot;compilerPath&quot;: &quot;&#x2F;usr&#x2F;bin&#x2F;gcc&quot;,
+      &quot;cStandard&quot;: &quot;gnu11&quot;,
+      &quot;cppStandard&quot;: &quot;c++14&quot;
+    &#125;
+  ],
+  &quot;version&quot;: 4
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>运行成功<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230404223438.png" alt="image.png"></p>
 
                 
             </div>
@@ -1116,7 +1151,7 @@ rosrun talkerToListener talker
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">2.9k</span>
+                        class="white-color">3.1k</span>
             
             
             
