@@ -4,10 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Git 本地仓库到github, K.S.J &#39; Blog">
-    <meta name="description" content="上传步骤1.git init &amp;#x2F;&amp;#x2F;工作空间创建.git文件夹（默认隐藏了该文件夹） 
-2.git add . &amp;#x2F;&amp;#x2F;添加到暂存区 
-3.git commit -m &amp;quot;你的提交注释注释&amp;quot">
+    <meta name="keywords" content="ROS通信机制（话题发布实战）, K.S.J &#39; Blog">
+    <meta name="description" content="
+
+实战目的通过ROS内置的turtlesim案例，结合已经介绍ROS命令获取节点、话题、话题消息、服务、服务消息与参数的信息，最终再以编码的方式实现乌龟运动的控制、乌龟位姿的订阅、乌龟生成与乌龟窗体背景颜色的修改。
+
+编写节点
+编写
+
+生">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +24,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Git 本地仓库到github | K.S.J &#39; Blog</title>
+    <title>ROS通信机制（话题发布实战） | K.S.J &#39; Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -334,12 +339,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Git 本地仓库到github</h1>
+                    <h1 class="description center-align post-title">ROS通信机制（话题发布实战）</h1>
                 </div>
             </div>
         </div>
@@ -363,12 +368,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Git/">
-                                <span class="chip bg-color">Git</span>
+                            <a href="/tags/Ros/">
+                                <span class="chip bg-color">Ros</span>
                             </a>
                         
-                            <a href="/tags/cmd/">
-                                <span class="chip bg-color">cmd</span>
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
+                            </a>
+                        
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                            <a href="/tags/LInux/">
+                                <span class="chip bg-color">LInux</span>
                             </a>
                         
                     </div>
@@ -379,8 +392,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Git%E5%85%A5%E9%97%A8/" class="post-category">
-                                Git入门
+                            <a href="/categories/Ros%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AE%9E%E6%88%98/" class="post-category">
+                                Ros机器人实战
                             </a>
                         
                     </div>
@@ -392,21 +405,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-01
+                    2023-05-11
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-03-22
+                    2023-05-12
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    168
+                    394
                 </div>
                 
 
@@ -436,19 +449,77 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="上传步骤"><a href="#上传步骤" class="headerlink" title="上传步骤"></a>上传步骤</h1><pre class="line-numbers language-none"><code class="language-none">1.git init &#x2F;&#x2F;工作空间创建.git文件夹（默认隐藏了该文件夹） 
-2.git add . &#x2F;&#x2F;添加到暂存区 
-3.git commit -m &quot;你的提交注释注释&quot; 
-4.git remote add origin http:&#x2F;&#x2F;xxxxxxxxx.git &#x2F;&#x2F;本地仓库和远程github关联 
-5.git pull --rebase origin master &#x2F;&#x2F;远程有readme.md，拉一下 (感觉没必要)
-6.git push -u origin master &#x2F;&#x2F;代码合并<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <hr>
+<p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230512154631.png"></p>
+<h1 id="实战目的"><a href="#实战目的" class="headerlink" title="实战目的"></a>实战目的</h1><p>通过ROS内置的turtlesim案例，结合已经介绍ROS命令获取节点、话题、话题消息、服务、服务消息与参数的信息，最终再以编码的方式实现乌龟运动的控制、乌龟位姿的订阅、乌龟生成与乌龟窗体背景颜色的修改。</p>
+<ol>
+<li>编写节点</li>
+<li>编写</li>
+</ol>
+<h1 id="生成一只小乌龟"><a href="#生成一只小乌龟" class="headerlink" title="生成一只小乌龟"></a>生成一只小乌龟</h1><p>C代码</p>
+<pre class="line-numbers language-c" data-language="c"><code class="language-c"><span class="token comment">/*
+    生成一只小乌龟
+    准备工作:
+        1.服务话题 /spawn
+        2.服务消息类型 turtlesim/Spawn
+        3.运行前先启动 turtlesim_node 节点
 
-<h1 id="错误解决办法"><a href="#错误解决办法" class="headerlink" title="错误解决办法"></a>错误解决办法</h1><h2 id="TLS-certificate-verification-has-been-disabled-错误"><a href="#TLS-certificate-verification-has-been-disabled-错误" class="headerlink" title="TLS certificate verification has been disabled!错误"></a>TLS certificate verification has been disabled!错误</h2><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321162745.png"></p>
-<pre class="line-numbers language-none"><code class="language-none">git config --global http.sslVerify true<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>[参考]<a target="_blank" rel="noopener" href="https://www.cnblogs.com/wuhairui/p/15701177.html">https://www.cnblogs.com/wuhairui/p/15701177.html</a></p>
-<h2 id="git-push错误failed-to-push-some-refs-to"><a href="#git-push错误failed-to-push-some-refs-to" class="headerlink" title="git push错误failed to push some refs to"></a>git push错误failed to push some refs to</h2><p><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321163002.png"><br>输入：</p>
-<pre class="line-numbers language-none"><code class="language-none">git pull --rebase origin master<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>成功解决：<br><img src="https://cdn.jsdelivr.net/gh/KJjjj0/image_bg@master/20230321163404.png"><br>[参考]<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39416311/article/details/102219428">https://blog.csdn.net/qq_39416311/article/details/102219428</a></p>
+    实现流程:
+        1.包含头文件
+          需要包含 turtlesim 包下资源，注意在 package.xml 配置
+        2.初始化 ros 节点
+        3.创建 ros 句柄
+        4.创建 service 客户端
+        5.等待服务启动
+        6.发送请求
+        7.处理响应
+
+*/</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"ros/ros.h"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"turtlesim/Spawn.h"</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+    <span class="token function">setlocale</span><span class="token punctuation">(</span>LC_ALL<span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 2.初始化 ros 节点</span>
+    ros<span class="token operator">::</span><span class="token function">init</span><span class="token punctuation">(</span>argc<span class="token punctuation">,</span>argv<span class="token punctuation">,</span><span class="token string">"set_turtle"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 3.创建 ros 句柄</span>
+    ros<span class="token operator">::</span>NodeHandle nh<span class="token punctuation">;</span>
+    <span class="token comment">// 4.创建 service 客户端</span>
+    ros<span class="token operator">::</span>ServiceClient client <span class="token operator">=</span> nh<span class="token punctuation">.</span>serviceClient<span class="token operator">&lt;</span>turtlesim<span class="token operator">::</span>Spawn<span class="token operator">></span><span class="token punctuation">(</span><span class="token string">"/spawn"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 5.等待服务启动</span>
+    <span class="token comment">// client.waitForExistence();</span>
+    ros<span class="token operator">::</span>service<span class="token operator">::</span><span class="token function">waitForService</span><span class="token punctuation">(</span><span class="token string">"/spawn"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 6.发送请求</span>
+    turtlesim<span class="token operator">::</span>Spawn spawn<span class="token punctuation">;</span>
+    spawn<span class="token punctuation">.</span>request<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">1.0</span><span class="token punctuation">;</span>
+    spawn<span class="token punctuation">.</span>request<span class="token punctuation">.</span>y <span class="token operator">=</span> <span class="token number">1.0</span><span class="token punctuation">;</span>
+    spawn<span class="token punctuation">.</span>request<span class="token punctuation">.</span>theta <span class="token operator">=</span> <span class="token number">1.57</span><span class="token punctuation">;</span>
+    spawn<span class="token punctuation">.</span>request<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"my_turtle"</span><span class="token punctuation">;</span>
+    bool flag <span class="token operator">=</span> client<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>spawn<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 7.处理响应结果</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>flag<span class="token punctuation">)</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token function">ROS_INFO</span><span class="token punctuation">(</span><span class="token string">"新的乌龟生成,名字:%s"</span><span class="token punctuation">,</span>spawn<span class="token punctuation">.</span>response<span class="token punctuation">.</span>name<span class="token punctuation">.</span><span class="token function">c_str</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">ROS_INFO</span><span class="token punctuation">(</span><span class="token string">"乌龟生成失败！！！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>注意这里要给添加所依赖的功能包</p>
+<pre class="line-numbers language-none"><code class="language-none">find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  rospy
+  std_msgs
+  message_generation
+  geometry_msgs
+  turtlesim  # 文中添加这句就ok
+)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>接下来就是配置 CMakeLists.txt了，如同上篇，就不做过多解释。<br>未完待续。。。</p>
 
                 
             </div>
@@ -475,7 +546,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://kjjjj0.github.io/2023/03/01/git/git-ben-di-cang-ku-dao-github/">http://kjjjj0.github.io/2023/03/01/git/git-ben-di-cang-ku-dao-github/</a>
+                    <a href="http://kjjjj0.github.io/2023/05/11/ros/hua-ti-fa-bu-shi-zhan/">http://kjjjj0.github.io/2023/05/11/ros/hua-ti-fa-bu-shi-zhan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -513,12 +584,20 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Git/">
-                                    <span class="chip bg-color">Git</span>
+                                <a href="/tags/Ros/">
+                                    <span class="chip bg-color">Ros</span>
                                 </a>
                             
-                                <a href="/tags/cmd/">
-                                    <span class="chip bg-color">cmd</span>
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
+                                </a>
+                            
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
+                                <a href="/tags/LInux/">
+                                    <span class="chip bg-color">LInux</span>
                                 </a>
                             
                         </div>
@@ -564,17 +643,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/03/05/ros/ji-ben-ming-ling/">
+                <a href="/2023/05/11/ros/hua-ti-fa-bu-shi-zhan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Ros基础">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="ROS通信机制（话题发布实战）">
                         
-                        <span class="card-title">Ros基础</span>
+                        <span class="card-title">ROS通信机制（话题发布实战）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -584,9 +664,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-05-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -599,6 +679,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -629,13 +710,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/03/01/an-zhuo/an-zhuo-kai-fa-huan-jing-pei-zhi/">
+                <a href="/2023/04/22/hadoop/wei-ming-ming/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="安卓环境配置">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">安卓环境配置</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -646,31 +727,15 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-22
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Android%E5%85%A5%E9%97%A8/" class="post-category">
-                                    Android入门
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            K.S.J
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/android/">
-                        <span class="chip bg-color">android</span>
-                    </a>
-                    
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
-                    </a>
-                    
                 </div>
                 
             </div>
